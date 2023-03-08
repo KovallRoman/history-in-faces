@@ -1,0 +1,50 @@
+.form {
+  max-width: 465px;
+  margin: 20px auto;
+}
+
+.form-fields {
+  text-align: center;
+
+  &__name,
+  &__address,
+  &__group-radio {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__group-label {
+    display: flex;
+    justify-content: space-around;
+    min-width: 255px;
+    line-height: 60px;
+  }
+
+  &__button {
+    width: 100%;
+    border: 1px solid;
+    border-radius: 5px;
+  }
+}
+
+.mat-form-field {
+  max-width: 225px;
+}
+
+.mat-spinner {
+  display: flex;
+  justify-content: center;
+  margin: 400px auto;
+}
+
+.field-textarea {
+  min-width: 450px;
+  text-align: initial;
+  font-size: 16px;
+}
+
+.offline-disabled.disabled {
+  pointer-events: none;
+  cursor: default;
+  opacity: 0.5;
+}

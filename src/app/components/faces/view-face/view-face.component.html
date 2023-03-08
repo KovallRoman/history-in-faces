@@ -1,0 +1,43 @@
+<mat-card class="example-card">
+  <mat-card-title class="card">
+    <div>
+      <a class="card__row card__row--title"
+         [class.disabled]="isOffline"
+         [routerLink]="['face', user.id]">
+        {{ user.firstName }} {{ user.lastName }}
+      </a>
+    </div>
+
+    <button class="card__more-button"
+            mat-icon-button
+            [disabled]="isOffline"
+            [matMenuTriggerFor]="menu"
+            aria-label="Toggle menu">
+
+      <mat-icon>more_vert</mat-icon>
+    </button>
+
+    <mat-menu #menu="matMenu" xPosition="before">
+      <button class="card__button"
+              mat-menu-item
+              [disabled]="isOffline"
+              [routerLink]="['user', user.id]"
+      >Edit
+        <mat-icon class="card__icon">edit</mat-icon>
+      </button>
+
+      <button class="card__button"
+              mat-menu-item
+              [disabled]="isOffline"
+              (click)="onDeleteClick()"
+      >Delete
+        <mat-icon class="card__icon">delete</mat-icon>
+      </button>
+    </mat-menu>
+  </mat-card-title>
+
+  <div mat-card-image class="card__img">
+    <img [src]="user.avatarUrl" alt="">
+  </div>
+
+</mat-card>

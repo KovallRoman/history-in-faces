@@ -1,0 +1,21 @@
+.l-container {
+  max-width: 1280px;
+  padding-left: 30px;
+  padding-right: 30px;
+  margin: auto;
+  width: 100%;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+
+  &__mode {
+    align-items: center;
+    display: flex
+  }
+
+  &__toggle {
+    margin: 0 10px;
+  }
+}

@@ -1,0 +1,29 @@
+.snackbar {
+  display: flex;
+  flex-wrap: nowrap;
+  font-size: 16px;
+  margin: 0 auto;
+
+  &__alert {
+    margin-right: 10px;
+    line-height: 30px;
+  }
+
+  &__icon {
+    padding: 0 10px;
+  }
+
+  &__offline-icon {
+    margin: 0 10px;
+  }
+
+  &__button {
+    border-left: 1px solid;
+    border-right: none;
+    border-bottom: none;
+    border-top: none;
+    padding: 3px 10px 0;
+  }
+}
+
+
