@@ -1,0 +1,154 @@
+<div class="card-edit-face">
+  <div class="spinner" *ngIf="isLoading">
+    <mat-spinner [diameter]="50"></mat-spinner>
+  </div>
+
+  <mat-card class="l-form-edit">
+    <form class="form-edit"
+          novalidate
+          [formGroup]="myEditForm">
+      <div>
+        <div class="form-fields__name offline-disabled"
+             [class.disabled]="isOffline">
+
+          <mat-form-field class="form-field" appearance="outline">
+            <mat-label>First Name</mat-label>
+
+            <input matInput
+                   type="text"
+                   formControlName="firstName"
+            >
+
+            <mat-icon matSuffix>edit_note</mat-icon>
+
+            <mat-hint *ngIf="myEditForm.controls['firstName'].invalid && myEditForm.controls['firstName'].touched">
+              Name field not filled
+            </mat-hint>
+          </mat-form-field>
+
+          <mat-form-field class="form-field" appearance="outline">
+            <mat-label>Last Name</mat-label>
+
+            <input matInput
+                   type="text"
+                   formControlName="lastName"
+            >
+
+            <mat-icon matSuffix>edit_note</mat-icon>
+
+            <mat-hint *ngIf="myEditForm.controls['lastName'].invalid && myEditForm.controls['lastName'].touched">
+              Last NameLast Name field not filled
+            </mat-hint>
+          </mat-form-field>
+        </div>
+
+        <div class="form-fields__group-radio offline-disabled"
+             [class.disabled]="isOffline">
+
+          <mat-form-field class="form-field" appearance="outline">
+            <mat-label>Birthe Date</mat-label>
+            <input matInput
+                   formControlName="birthedAt"
+                   [matDatepicker]="picker"
+            >
+
+            <mat-hint *ngIf="myEditForm.controls['birthedAt'].invalid && myEditForm.controls['birthedAt'].touched">
+              Date field not filled
+            </mat-hint>
+
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+
+          <mat-radio-group class="form-fields__group-label"
+                           aria-labelledby="example-radio-group-label"
+                           formControlName="gender"
+                           required
+                           color="primary">
+            <mat-radio-button *ngFor="let gender of genders" [value]="gender">
+              {{ gender }}
+            </mat-radio-button>
+          </mat-radio-group>
+        </div>
+
+        <div class="form-fields__address offline-disabled"
+             [class.disabled]="isOffline">
+
+          <mat-form-field class="form-field" appearance="outline">
+            <mat-label>Country</mat-label>
+
+            <input matInput type="text"
+                   placeholder="country"
+                   formControlName="country"
+            >
+
+            <mat-icon matSuffix>edit_note</mat-icon>
+
+            <mat-hint *ngIf="myEditForm.controls['country'].invalid && myEditForm.controls['country'].touched">
+              Country field not filled
+            </mat-hint>
+          </mat-form-field>
+
+          <mat-form-field class="form-field" appearance="outline">
+            <mat-label>City</mat-label>
+
+            <input matInput type="text"
+                   placeholder="city"
+                   formControlName="city"
+            >
+
+            <mat-icon matSuffix>edit_note</mat-icon>
+
+            <mat-hint *ngIf="myEditForm.controls['city'].invalid && myEditForm.controls['city'].touched">
+              City field not filled
+            </mat-hint>
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field class="field-textareaOffline-disabled form-field"
+                          appearance="fill"
+                          [class.disabled]="isOffline">
+
+            <textarea class="form-edit__textarea" type="text"
+                      formControlName="story"
+                      maxlength="1000"
+                      matInput>
+            </textarea>
+          </mat-form-field>
+
+          <button class="form-fields__button"
+                  mat-flat-button
+                  color="primary"
+                  [disabled]="myEditForm.invalid || isOffline"
+                  (click)="onUpdateClick()"
+          >
+            confirm the changes
+          </button>
+        </div>
+      </div>
+
+      <div class="avatar-edit offline-disabled"
+           [class.disabled]="isOffline">
+        <img class="avatar-edit__img" [src]="myEditForm.controls['avatarUrl'].value">
+        <div>
+          <input #csvInput
+                 hidden="true"
+                 name="avatarUrl"
+                 type="file"
+                 accept="image/*"
+                 (change)="handleInputChange($event)"
+          >
+
+          <button class="avatar-edit__button"
+                  type="button"
+                  mat-stroked-button
+                  color="primary"
+                  (click)="csvInput.click()">
+            Choose File
+          </button>
+        </div>
+      </div>
+    </form>
+  </mat-card>
+</div>

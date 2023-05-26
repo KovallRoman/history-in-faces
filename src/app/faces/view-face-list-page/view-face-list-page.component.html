@@ -1,0 +1,26 @@
+<div class="faces-cards">
+  <div class="spinner" *ngIf="isLoading">
+    <mat-spinner [diameter]="50"></mat-spinner>
+  </div>
+  <div class="faces-cards__wrap">
+
+    <app-face-card *ngFor="let user of users"
+                   class="faces-cards__card"
+                   [user]="user"
+                   (delete)="onDelete(user)">
+    </app-face-card>
+
+    <div class="faces-cards__empty-card"></div>
+
+    <div class="faces-cards__empty-card"></div>
+  </div>
+
+  <button class="faces-cards__button"
+          mat-mini-fab
+          color="primary"
+          [disabled]="isOffline"
+          [routerLink]="'/addFace'">
+    <mat-icon>person_add</mat-icon>
+  </button>
+</div>
+

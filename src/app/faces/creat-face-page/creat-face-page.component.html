@@ -1,0 +1,155 @@
+<div class="wrapper">
+  <div class="spinner" *ngIf="isLoading">
+    <mat-spinner [diameter]="50"></mat-spinner>
+  </div>
+  <mat-card class="form">
+    <form class="form-fields"
+          novalidate
+          [formGroup]="myForm"
+          [class.disabled]="isOffline"
+    >
+      <div class="form-fields__name offline-disabled"
+           [class.disabled]="isOffline">
+        <mat-form-field class="form-field" appearance="outline">
+          <mat-label>First Name</mat-label>
+
+          <input matInput
+                 type="text"
+                 placeholder="firstName"
+                 formControlName="firstName"
+          >
+
+          <mat-icon matSuffix>person_add</mat-icon>
+
+          <mat-hint *ngIf="myForm.controls['firstName'].invalid && myForm.controls['firstName'].touched">
+            Name field not filled
+          </mat-hint>
+        </mat-form-field>
+
+        <mat-form-field class="form-field" appearance="outline">
+          <mat-label>Last Name</mat-label>
+
+          <input matInput
+                 type="text"
+                 placeholder="lastName"
+                 formControlName="lastName"
+          >
+
+          <mat-icon matSuffix>person_add</mat-icon>
+
+          <mat-hint *ngIf="myForm.controls['lastName'].invalid && myForm.controls['lastName'].touched">
+            Last Name field not filled
+          </mat-hint>
+        </mat-form-field>
+      </div>
+
+      <div class="form-fields__group-radio offline-disabled"
+           [class.disabled]="isOffline">
+
+        <mat-form-field class="form-field" appearance="outline">
+          <mat-label>Birthe Date</mat-label>
+          <input matInput
+                 formControlName="birthedAt"
+                 [matDatepicker]="picker"
+          >
+
+          <mat-hint *ngIf="myForm.controls['birthedAt'].invalid && myForm.controls['birthedAt'].touched">
+            Date field not filled
+          </mat-hint>
+
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+        <mat-radio-group class="form-fields__group-label"
+                         aria-labelledby="example-radio-group-label"
+                         formControlName="gender"
+                         color="accent">
+
+          <mat-radio-button *ngFor="let gender of genders" [value]="gender">
+            {{ gender }}
+          </mat-radio-button>
+        </mat-radio-group>
+      </div>
+
+      <div class="form-fields__address offline-disabled"
+           [class.disabled]="isOffline">
+
+        <mat-form-field class="form-field" appearance="outline">
+          <mat-label>Country</mat-label>
+
+          <input matInput
+                 type="text"
+                 placeholder="country"
+                 formControlName="country"
+          >
+
+          <mat-icon matSuffix>person_add</mat-icon>
+
+          <mat-hint *ngIf="myForm.controls['country'].invalid && myForm.controls['country'].touched">
+            Country field not filled
+          </mat-hint>
+        </mat-form-field>
+
+        <mat-form-field class="form-field" appearance="outline">
+          <mat-label>City</mat-label>
+
+          <input matInput
+                 type="text"
+                 placeholder="city"
+                 formControlName="city"
+          >
+
+          <mat-icon matSuffix>person_add</mat-icon>
+
+          <mat-hint *ngIf="myForm.controls['city'].invalid && myForm.controls['city'].touched">
+            City field not filled
+          </mat-hint>
+        </mat-form-field>
+      </div>
+
+      <div class="form-fields__avatar offline-disabled avatar-add"
+           [class.disabled]="isOffline">
+
+        <img class="avatar-add__img" [src]="myForm.controls['avatarUrl'].value" alt="">
+        <div>
+          <input #csvInput hidden="true"
+                 name="avatarUrl" type="file"
+                 accept="image/*"
+                 (change)="handleInputChange($event)"
+          >
+
+          <button class="avatar-add__button"
+                  type="button"
+                  mat-stroked-button
+                  color="primary"
+                  (click)="csvInput.click()">
+            Choose Img
+          </button>
+        </div>
+      </div>
+
+      <mat-form-field class="field-textarea offline-disabled form-field"
+                      appearance="fill"
+                      [class.disabled]="isOffline">
+
+        <textarea class="form-fields__story"
+                  type="text"
+                  formControlName="story"
+                  maxlength="1000"
+                  matInput
+                  style="min-height: 100px"
+        >
+        </textarea>
+      </mat-form-field>
+
+      <button class="form-fields__button"
+              mat-flat-button color="primary"
+              [disabled]="myForm.invalid || isOffline"
+              (click)="onClick()">
+        you can add to a page
+      </button>
+    </form>
+  </mat-card>
+</div>

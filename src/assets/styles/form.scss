@@ -1,6 +1,22 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin-top: 64px;
+  padding-bottom: 64px;
+
+  &--absolute {
+    position: absolute;
+  }
+}
+
 .form {
   max-width: 465px;
-  margin: 20px auto;
 }
 
 .form-fields {
@@ -15,7 +31,7 @@
 
   &__group-label {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     min-width: 255px;
     line-height: 60px;
   }
@@ -27,14 +43,9 @@
   }
 }
 
-.mat-form-field {
+.form-field {
   max-width: 225px;
-}
-
-.mat-spinner {
-  display: flex;
-  justify-content: center;
-  margin: 400px auto;
+  display: inline;
 }
 
 .field-textarea {

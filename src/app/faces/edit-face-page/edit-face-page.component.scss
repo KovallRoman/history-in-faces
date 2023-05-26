@@ -1,0 +1,38 @@
+.card-edit-face {
+  max-width: 865px;
+  margin: 75px auto;
+
+}
+
+.form-field {
+  display: inline;
+}
+
+.avatar-edit {
+  width: 100%;
+  margin-left: 30px;
+
+  &__img {
+    height: 505px;
+    width: 322px;
+    object-fit: cover;
+    overflow: hidden;
+  }
+
+  &__button {
+    margin: 15px auto 0;
+    max-height: 36px;
+    border-radius: 5px;
+    display: block;
+    width: 100%;
+  }
+}
+
+
+.form-edit {
+  display: flex;
+
+  &__textarea {
+    min-height: 240px;
+  }
+}

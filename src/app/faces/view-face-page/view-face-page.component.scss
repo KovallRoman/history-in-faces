@@ -1,0 +1,47 @@
+.example-card {
+  min-height: 150px;
+  margin: 220px auto 0;
+  max-width: 850px;
+  text-align: justify;
+}
+
+.wrap {
+  display: flex;
+}
+
+.l-card {
+  margin: 0 20px;
+}
+
+.card {
+  justify-content: space-between;
+
+  &__row {
+    margin-bottom: 10px;
+    font-weight: normal;
+
+    &--title {
+      font-weight: 500;
+      font-size: 24px;
+    }
+  }
+
+  &__bold-text {
+    font-size: 20px;
+    font-weight: 300;
+  }
+
+  &__text {
+    font-size: 16px;
+  }
+}
+
+.card-image {
+  margin: 0;
+  display: flex;
+  width: 200px;
+  min-width: 200px;
+}
+.mat-card-image:first-child {
+  margin-top: 0;
+}

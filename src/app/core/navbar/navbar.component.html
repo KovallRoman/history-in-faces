@@ -1,0 +1,59 @@
+<!--<pre>{{a | json}}</pre>-->
+<mat-toolbar class="nav-container" [color]="isDarkThemeEnabled ? null : 'primary'">
+  <div>
+    <button class="nav-container__button-home" mat-icon-button
+            [routerLink]="'/'"
+            [class.disabled]="isOffline">
+      <mat-icon>home</mat-icon>
+    </button>
+  </div>
+
+  <div class="nav-container__mode">
+    <div *ngIf="isOffline">
+      <mat-icon class="offline-icon">wifi_off</mat-icon>
+    </div>
+
+    <ng-container *ngIf="token; else guestBlock">
+      <a class="nav-container__item"
+         [class.disabled]="isOffline"
+         (click)="onLogoutClick()"
+      >
+        Log Out
+      </a>
+
+      <a class="nav-container__item"
+         [routerLink]="'user/editUser'"
+         [class.disabled]="isOffline"
+      >
+        Edit User
+      </a>
+    </ng-container>
+
+    <ng-template #guestBlock>
+      <a class="nav-container__item"
+         [routerLink]="'user/signUp'"
+         [class.disabled]="isOffline"
+      >
+        Sign Up
+      </a>
+
+      <a class="nav-container__item"
+         [routerLink]="'user/logIn'"
+         [class.disabled]="isOffline"
+      >
+        Log In
+      </a>
+    </ng-template>
+
+    <mat-icon>light_mode</mat-icon>
+
+    <mat-slide-toggle class="nav-container__toggle"
+                      color="primary"
+                      [ngModel]="isDarkThemeEnabled"
+                      [disabled]="isOffline"
+                      (change)="onChange($event)">
+    </mat-slide-toggle>
+
+    <mat-icon>dark_mode</mat-icon>
+  </div>
+</mat-toolbar>

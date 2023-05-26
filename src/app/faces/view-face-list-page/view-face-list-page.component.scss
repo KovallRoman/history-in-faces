@@ -1,0 +1,17 @@
+.faces-cards {
+  max-width: 980px;
+  padding: 0 40px 30px;
+  margin: auto;
+
+  &__wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  &__button {
+    bottom: 90px;
+    right: 20px;
+    position: fixed;
+  }
+}

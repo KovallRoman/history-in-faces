@@ -1,0 +1,22 @@
+@import "../../../mixins";
+
+.nav-container {
+
+  &__item {
+    margin-right: 40px;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  &__item.disabled,
+  &__button-home.disabled {
+    pointer-events: none;
+    cursor: default;
+    opacity: 0.5;
+    color: inherit;
+  }
+}
+
+.offline-icon {
+  margin: 20px;
+}

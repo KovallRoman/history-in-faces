@@ -1,0 +1,57 @@
+.example-card {
+  margin: 30px 15px 0;
+  padding: 16px 16px 0;
+}
+
+.card {
+  &__row {
+    font-weight: normal;
+    font-size: 18px;
+    margin-bottom: 16px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__title {
+    font-weight: 500;
+    font-size: 18px;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  &__title.disabled {
+    pointer-events: none;
+    cursor: default;
+    opacity: 0.2;
+  }
+
+  &__more-button {
+    margin: -10px -10px -10px 5px;
+  }
+
+  &__img {
+    height: 395px;
+    width: 296px;
+    object-fit: cover;
+    display: flex;
+    overflow: hidden;
+    margin-right: -16px;
+    margin-left: -16px;
+    align-items: center;
+  }
+
+  &__button {
+    justify-content: space-between;
+    display: flex;
+    line-height: 55px;
+  }
+
+  &__icon {
+    line-height: 48px;
+  }
+}
+
+.mat-menu-item .mat-icon {
+  margin: 0;
+}
+
