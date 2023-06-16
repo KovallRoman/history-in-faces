@@ -24,7 +24,7 @@
           mat-mini-fab
           color="primary"
           [disabled]="isOffline"
-          [routerLink]="'/addFace'">
+          (click)="openSnackBar()">
     <mat-icon>person_add</mat-icon>
   </button>
 </div>

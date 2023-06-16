@@ -15,6 +15,9 @@ import {
 } from './offline-snackbar-content/offline-snackbar-content.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { FooterComponent } from './footer/footer.component';
+import {
+  RegistrationSnackBarContentComponent
+} from './registration-snack-bar-content/registration-snack-bar-content.component';
 
 
 @NgModule({
@@ -22,6 +25,7 @@ import { FooterComponent } from './footer/footer.component';
     NavbarComponent,
     OfflineSnackbarContentComponent,
     FooterComponent,
+    RegistrationSnackBarContentComponent,
   ],
   imports: [
     FormsModule,
@@ -35,6 +39,7 @@ import { FooterComponent } from './footer/footer.component';
     RouterModule,
     CommonModule,
     MatSidenavModule,
+    MatSnackBarModule,
   ],
   providers: [],
   exports: [
