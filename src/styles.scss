@@ -160,11 +160,11 @@ $teal-palette: (
 
 $light-background-palette: (
   status-bar: black,
-  app-bar:    #b0bec5,
-  background: map.get($blue-grey-palette, 100),
-  hover:      rgba(white, 0.04), // TODO(kara): check style with Material Design UX
-  card:       map.get($blue-grey-palette, 50),
-  dialog:     map.get($blue-grey-palette, 0),
+  app-bar: #b0bec5,
+  background: #f3f3f3,
+  hover: rgba(white, 0.04), // TODO(kara): check style with Material Design UX
+  card: #ffffff,
+  dialog:  map.get($blue-grey-palette, 0),
   disabled-button: rgba(black, 0.12),
   raised-button: map.get($blue-grey-palette, 10),
   focused-button: $dark-focused,

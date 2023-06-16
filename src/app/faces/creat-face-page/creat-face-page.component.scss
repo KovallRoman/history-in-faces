@@ -1,3 +1,5 @@
+@import "src/assets/styles/mixins";
+
 .avatar-add {
   &__button {
     margin: 10px auto 15px;
@@ -7,5 +9,13 @@
 
   &__img {
     width: 100%;
+  }
+}
+
+.form-field {
+  display: inline;
+
+  @include tablet {
+    display: inline-block;
   }
 }

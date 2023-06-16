@@ -1,9 +1,14 @@
+<h1 class="faces-cards__title">
+  And who do you think<span class="faces-cards__title faces-cards__title--hidden"> is the man who</span>changed our
+  world?
+</h1>
+
 <div class="faces-cards">
   <div class="spinner" *ngIf="isLoading">
     <mat-spinner [diameter]="50"></mat-spinner>
   </div>
-  <div class="faces-cards__wrap">
 
+  <div class="faces-cards__wrap">
     <app-face-card *ngFor="let user of users"
                    class="faces-cards__card"
                    [user]="user"

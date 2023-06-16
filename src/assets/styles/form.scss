@@ -1,3 +1,5 @@
+@import "src/assets/styles/mixins";
+
 .wrapper {
   display: flex;
   align-items: center;
@@ -7,8 +9,11 @@
   top: 0;
   left: 0;
   right: 0;
-  margin-top: 64px;
-  padding-bottom: 64px;
+  margin: 30px 5px;
+
+  @include tablet {
+    margin: 85px auto;
+  }
 
   &--absolute {
     position: absolute;
@@ -16,7 +21,11 @@
 }
 
 .form {
-  max-width: 465px;
+  width: 100%;
+
+  @include tablet {
+    max-width: 465px;
+  }
 }
 
 .form-fields {
@@ -25,8 +34,12 @@
   &__name,
   &__address,
   &__group-radio {
-    display: flex;
-    justify-content: space-between;
+    display: block;
+
+    @include tablet {
+      display: flex;
+      justify-content: space-between;
+    }
   }
 
   &__group-label {

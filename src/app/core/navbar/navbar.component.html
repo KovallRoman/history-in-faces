@@ -1,4 +1,3 @@
-<!--<pre>{{a | json}}</pre>-->
 <mat-toolbar class="nav-container" [color]="isDarkThemeEnabled ? null : 'primary'">
   <div>
     <button class="nav-container__button-home" mat-icon-button
@@ -30,7 +29,7 @@
     </ng-container>
 
     <ng-template #guestBlock>
-      <a class="nav-container__item"
+      <a class="nav-container__item nav-container__item--hidden"
          [routerLink]="'user/signUp'"
          [class.disabled]="isOffline"
       >
@@ -45,7 +44,7 @@
       </a>
     </ng-template>
 
-    <mat-icon>light_mode</mat-icon>
+    <mat-icon class="nav-container__icon">light_mode</mat-icon>
 
     <mat-slide-toggle class="nav-container__toggle"
                       color="primary"
@@ -54,6 +53,6 @@
                       (change)="onChange($event)">
     </mat-slide-toggle>
 
-    <mat-icon>dark_mode</mat-icon>
+    <mat-icon class="nav-container__icon">dark_mode</mat-icon>
   </div>
 </mat-toolbar>

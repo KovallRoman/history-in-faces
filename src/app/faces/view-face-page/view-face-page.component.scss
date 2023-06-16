@@ -1,12 +1,20 @@
+@import "src/assets/styles/mixins";
+
 .example-card {
   min-height: 150px;
-  margin: 220px auto 0;
+  margin: 30px auto;
   max-width: 850px;
-  text-align: justify;
+  text-align: left;
+
+  @include tablet {
+    margin: 220px auto 0;
+  }
 }
 
 .wrap {
-  display: flex;
+  @include tablet {
+    display: flex;
+  }
 }
 
 .l-card {
@@ -19,6 +27,11 @@
   &__row {
     margin-bottom: 10px;
     font-weight: normal;
+    text-align: center;
+
+    @include tablet {
+      text-align: left;
+    }
 
     &--title {
       font-weight: 500;
@@ -37,11 +50,16 @@
 }
 
 .card-image {
-  margin: 0;
+  margin: 0 auto 20px;
   display: flex;
   width: 200px;
   min-width: 200px;
+
+  @include tablet {
+    margin: 0;
+  }
 }
+
 .mat-card-image:first-child {
   margin-top: 0;
 }

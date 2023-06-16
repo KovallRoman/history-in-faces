@@ -10,8 +10,8 @@ import { OfflineMonitorService } from '../services/offline-monitor.service';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss'],
 })
-export class NavbarComponent {
 
+export class NavbarComponent {
   get isOffline(): boolean {
     return this.offlineMonitorService.isOffline;
   }
@@ -39,5 +39,4 @@ export class NavbarComponent {
     this.authHttpService
       .logoutUser();
   }
-
 }

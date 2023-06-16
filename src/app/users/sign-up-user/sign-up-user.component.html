@@ -3,6 +3,7 @@
     <div class="spinner" *ngIf="isLoading">
       <mat-spinner [diameter]="50"></mat-spinner>
     </div>
+
     <form class="form-fields"
           novalidate
           [formGroup]="myForm">
@@ -20,6 +21,7 @@
           Name field not filled
         </mat-hint>
       </mat-form-field>
+
       <mat-form-field class="form-field offline-disabled"
                       appearance="outline"
                       [class.disabled]="isOffline">
@@ -34,6 +36,7 @@
           Password field not filled
         </mat-hint>
       </mat-form-field>
+
       <mat-form-field class="form-field offline-disabled"
                       appearance="outline"
                       [class.disabled]="isOffline">
@@ -48,6 +51,7 @@
           Email field not filled
         </mat-hint>
       </mat-form-field>
+
       <button class="form-fields__button"
               mat-flat-button color="primary"
               [disabled]="myForm.invalid || isOffline"
@@ -57,10 +61,6 @@
     </form>
   </mat-card>
 </div>
-
-<ng-container>
-
-</ng-container>
 
 
 

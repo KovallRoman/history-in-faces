@@ -1,11 +1,17 @@
-@import "../../../mixins";
+@import "src/assets/styles/mixins";
 
 .nav-container {
+  height: 64px;
 
   &__item {
     margin-right: 40px;
     text-decoration: none;
     color: inherit;
+    display: none;
+
+    @include tablet {
+      display: block;
+    }
   }
 
   &__item.disabled,
@@ -14,6 +20,14 @@
     cursor: default;
     opacity: 0.5;
     color: inherit;
+  }
+
+  &__icon {
+    display: none;
+
+    @include tablet {
+      display: block;
+    }
   }
 }
 

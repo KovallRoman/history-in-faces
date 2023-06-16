@@ -1,3 +1,5 @@
+@import "src/assets/styles/mixins";
+
 .example-card {
   margin: 30px 15px 0;
   padding: 16px 16px 0;
@@ -30,14 +32,22 @@
   }
 
   &__img {
-    height: 395px;
-    width: 296px;
     object-fit: cover;
     display: flex;
     overflow: hidden;
     margin-right: -16px;
     margin-left: -16px;
     align-items: center;
+
+    @include tablet {
+      height: 360px;
+      width: 270px;
+    }
+
+    @include desktop {
+      height: 390px;
+      width: 295px;
+    }
   }
 
   &__button {
